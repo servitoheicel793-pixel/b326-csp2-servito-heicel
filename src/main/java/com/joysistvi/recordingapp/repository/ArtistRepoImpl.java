@@ -11,7 +11,6 @@ public class ArtistRepoImpl implements ArtistRepo {
 
     private final DbConnection dbConnection; // Composition
 
-    // Constructor injection
     public ArtistRepoImpl(DbConnection dbConnection) {
         this.dbConnection = dbConnection;
     }
@@ -20,7 +19,7 @@ public class ArtistRepoImpl implements ArtistRepo {
     @Override
     public List<Artist> getAllArtists() {
         List<Artist> artists = new ArrayList<>();
-        String query = "SELECT id, name FROM artists WHERE is_archived = 0";
+        String query = "SELECT * FROM artists WHERE is_archived = 0";
 
         try (Connection conn = dbConnection.connect();
              Statement stmnt = conn.createStatement();
@@ -84,6 +83,26 @@ public class ArtistRepoImpl implements ArtistRepo {
         return false;
     }
 
+    @Override
+    public boolean archiveArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public boolean restoreArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public List<Artist> getAllArchivedArtists() {
+        return List.of();
+    }
+
     public Artist getArtistById(int id) {
         String query = "SELECT * FROM artists WHERE id = ?";
 
@@ -102,6 +121,11 @@ public class ArtistRepoImpl implements ArtistRepo {
         }
 
         return null;
+    }
+
+    @Override
+    public List<Artist> searchArtist(String keyword) {
+        return List.of();
     }
 
 }

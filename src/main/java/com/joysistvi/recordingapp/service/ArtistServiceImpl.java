@@ -3,6 +3,9 @@ package com.joysistvi.recordingapp.service;
 import com.joysistvi.recordingapp.model.Artist;
 import com.joysistvi.recordingapp.repository.ArtistRepo;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ArtistServiceImpl implements ArtistService {
@@ -51,5 +54,30 @@ public class ArtistServiceImpl implements ArtistService {
         }
 
         return true;
+    }
+
+    @Override
+    public boolean updateArtist(Artist artist) {
+        return false;
+    }
+
+    @Override
+    public boolean archiveArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public boolean restoreArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteArtist(int id) {
+        return false;
+    }
+
+    @Override
+    public List<Artist> getAllArchivedArtists() {
+        return null;
     }
 }

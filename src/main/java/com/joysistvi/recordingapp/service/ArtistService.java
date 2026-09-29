@@ -15,5 +15,4 @@ public interface ArtistService {
     boolean restoreArtist(int id);
     boolean deleteArtist(int id);
     List<Artist> getAllArchivedArtists();
-
 }
