@@ -19,7 +19,7 @@ public class ArtistRepoImpl implements ArtistRepo {
     @Override
     public List<Artist> getAllArtists() {
         List<Artist> artists = new ArrayList<>();
-        String query = "SELECT * FROM artists WHERE is_archived = 0";
+        String query = "SELECT id, name FROM artists WHERE is_archived = 0";
 
         try (Connection conn = dbConnection.connect();
              Statement stmnt = conn.createStatement();
